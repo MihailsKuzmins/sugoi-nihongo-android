@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="detailItem" type="jp.mihailskuzmins.sugoinihongoapp.features.base.detail.detailitems.DetailItemSeekBar"/>
+		<variable name="isSeparatorVisible" type="Boolean"/>
+	</data>
+
+	<GridLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="@dimen/detail_item_height"
+		android:columnCount="3"
+		android:rowCount="4">
+
+		<TextView
+			android:layout_row="0"
+			android:layout_column="0"
+			android:layout_columnSpan="3"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="@{detailItem.label}"
+			android:layout_marginTop="@dimen/spacing_vertical"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:textColor="@color/colorDetailTextLabel"
+			android:textSize="@dimen/font_size_text"
+			android:layout_gravity="fill_horizontal"/>
+
+		<!-- Value -->
+		<TextView
+			android:layout_row="1"
+			android:layout_column="0"
+			android:layout_columnSpan="3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:text="@{String.valueOf(detailItem.value)}"
+			android:textSize="@dimen/font_size_text"/>
+
+		<!-- MinValue -->
+		<TextView
+			android:layout_row="2"
+			android:layout_column="0"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:text="@{String.valueOf(detailItem.minValue)}"
+			android:textSize="@dimen/font_size_text"/>
+
+		<!-- Important: place max BEFORE min, there is some Android logic which requires it -->
+		<androidx.appcompat.widget.AppCompatSeekBar
+			style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+			android:layout_row="2"
+			android:layout_column="1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="fill_horizontal|center_vertical"
+			android:max="@{detailItem.maxValue}"
+			android:min="@{detailItem.minValue}"
+			android:progress="@={detailItem.value}"
+			app:isSeekBarEnabled="@{detailItem.enabled}"/>
+
+		<!-- MaxValue -->
+		<TextView
+			android:layout_row="2"
+			android:layout_column="2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:text="@{String.valueOf(detailItem.maxValue)}"
+			android:textSize="@dimen/font_size_text"/>
+
+		<include
+			layout="@layout/control_separator_horizontal"
+			android:layout_row="3"
+			android:layout_column="0"
+			android:layout_columnSpan="3"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/control_separator_weight"
+			android:layout_gravity="fill_horizontal"
+			app:isVisible="@{detailItem.visible &amp;&amp; (isSeparatorVisible ?? true)}"/>
+	</GridLayout>
+
+</layout>

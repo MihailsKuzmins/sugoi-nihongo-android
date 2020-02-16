@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+
+	<TextView
+		android:layout_width="@dimen/table_word_mark_first_column_width"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/spacing_horizontal"
+		android:gravity="center"
+		android:textStyle="bold"
+		android:text="@string/word_mark"/>
+
+	<include layout="@layout/control_separator_vertical"/>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/spacing_horizontal"
+		android:gravity="center"
+		android:textStyle="bold"
+		android:text="@string/general_count"/>
+</LinearLayout>

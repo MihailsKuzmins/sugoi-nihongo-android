@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="detailItem" type="jp.mihailskuzmins.sugoinihongoapp.features.base.detail.detailitems.DetailItemTextViewImage"/>
+		<variable name="isSeparatorVisible" type="Boolean"/>
+	</data>
+
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="@dimen/detail_item_height"
+		android:onClick="@{() -> detailItem.onClickAction.invoke()}"
+		app:isClickable="@{detailItem.clickable}">
+
+		<ImageView
+			android:id="@+id/detail_item_text_view_image_image_view"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_width="@dimen/image_bounds"
+			android:layout_height="@dimen/image_bounds"
+			android:layout_centerVertical="true"
+			android:contentDescription="@string/general_settings"
+			app:imageResource="@{detailItem.image}"/>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:paddingTop="@dimen/spacing_vertical"
+			android:paddingBottom="@dimen/spacing_vertical"
+			android:layout_toEndOf="@id/detail_item_text_view_image_image_view"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="@dimen/font_size_header"
+				android:textColor="@color/colorDetailTextLabel"
+				android:text="@{detailItem.label}"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="@dimen/font_size_text_small"
+				android:text="@{detailItem.value}"/>
+		</LinearLayout>
+
+		<include
+			layout="@layout/control_separator_horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/control_separator_weight"
+			android:layout_alignParentBottom="true"
+			app:isVisible="@{detailItem.visible &amp;&amp; (isSeparatorVisible ?? true)}"/>
+
+	</RelativeLayout>
+</layout>

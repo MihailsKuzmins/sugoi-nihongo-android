@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.backup.SettingsBackupViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.backup.SettingsBackupFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<!-- Is backup enabled -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isBackupEnabledItem}"/>
+
+			<!-- Backup file count -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.backupFileCountItem}"/>
+
+			<!-- Backup creation frequency -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.backupCreationFrequencyDaysItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<!-- Information section -->
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.infoSectionHeader}"/>
+
+			<!-- Local backup count -->
+			<include
+				layout="@layout/detail_item_text_view_action"
+				app:detailItem="@{viewModel.localBackupCountItem}"/>
+
+			<!-- Last backup date -->
+			<include
+				layout="@layout/detail_item_text_view"
+				app:detailItem="@{viewModel.lastBackupDateItem}"
+				app:isSeparatorVisible="@{false}"/>
+		</LinearLayout>
+	</ScrollView>
+</layout>

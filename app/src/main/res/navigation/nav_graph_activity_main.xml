@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_graph_activity_main"
+	app:startDestination="@id/wordListFragment">
+
+	<fragment
+		android:id="@+id/grammarRuleDetailReadFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleDetailReadFragment"
+		android:label="@string/general_grammar_rule"
+		tools:layout="@layout/fragment_grammar_rule_detail_read">
+		<argument
+			android:name="grammarRuleId"
+			app:argType="string" />
+		<action
+			android:id="@+id/grammarRuleDetailRead_to_grammarRuleDetailEdit"
+			app:destination="@id/grammarRuleDetailEditFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/sentenceDetailReadFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.sentence.SentenceDetailReadFragment"
+		android:label="@string/general_sentence"
+		tools:layout="@layout/fragment_sentence_detail_read">
+		<argument
+			android:name="sentenceId"
+			app:argType="string" />
+		<action
+			android:id="@+id/sentenceDetailRead_to_sentenceDetailEdit"
+			app:destination="@id/sentenceDetailEditFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/wordDetailReadFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.WordDetailReadFragment"
+		android:label="@string/general_word"
+		tools:layout="@layout/fragment_word_detail_read">
+		<action
+			android:id="@+id/wordDetailRead_to_wordDetailEdit"
+			app:destination="@id/wordDetailEditFragment" />
+		<argument
+			android:name="wordId"
+			app:argType="string" />
+	</fragment>
+	<fragment
+		android:id="@+id/wordDetailEditFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.WordDetailEditFragment"
+		android:label="{title}"
+		tools:layout="@layout/fragment_word_detail_edit">
+		<argument
+			android:name="wordId"
+			app:argType="string"
+			app:nullable="true" />
+		<argument
+			android:name="title"
+			app:argType="string" />
+	</fragment>
+	<fragment
+		android:id="@id/wordListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.WordListFragment"
+		android:label="@string/general_words"
+		tools:layout="@layout/fragment_word_list" >
+		<action
+			android:id="@+id/wordList_to_wordDetailEdit"
+			app:destination="@id/wordDetailEditFragment" />
+		<action
+			android:id="@+id/wordList_to_wordDetailRead"
+			app:destination="@id/wordDetailReadFragment" />
+		<action
+			android:id="@+id/wordList_to_wordQuizSelectType"
+			app:destination="@id/nav_graph_word_quiz" />
+		<action
+			android:id="@+id/wordList_to_wordSearchList"
+			app:destination="@id/wordSearchListFragment" />
+		<action
+			android:id="@+id/wordList_to_wordListFavourites"
+			app:destination="@id/wordFavouritesListFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@id/sentenceListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.sentence.SentenceListFragment"
+		android:label="@string/general_sentences"
+		tools:layout="@layout/fragment_sentence_list" >
+		<action
+			android:id="@+id/sentenceList_to_sentenceDetailRead"
+			app:destination="@id/sentenceDetailReadFragment" />
+		<action
+			android:id="@+id/sentenceList_to_sentenceDetailEdit"
+			app:destination="@id/sentenceDetailEditFragment" />
+		<action
+			android:id="@+id/sentenceList_to_sentenceSearchList"
+			app:destination="@id/sentenceSearchListFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@id/grammarRuleListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleListFragment"
+		android:label="@string/general_grammar_rules"
+		tools:layout="@layout/fragment_grammar_rule_list" >
+		<action
+			android:id="@+id/grammarRuleList_to_grammarRuleDetailRead"
+			app:destination="@id/grammarRuleDetailReadFragment" />
+		<action
+			android:id="@+id/grammarRuleList_to_grammarRuleDetailEdit"
+			app:destination="@id/grammarRuleDetailEditFragment" />
+		<action
+			android:id="@+id/grammarRuleList_to_grammarRuleSearchList"
+			app:destination="@id/grammarRuleSearchListFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/sentenceDetailEditFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.sentence.SentenceDetailEditFragment"
+		android:label="{title}" >
+		<argument
+			android:name="sentenceId"
+			app:argType="string"
+			app:nullable="true" />
+		<argument
+			android:name="title"
+			app:argType="string" />
+	</fragment>
+	<fragment
+		android:id="@+id/grammarRuleDetailEditFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleDetailEditFragment"
+		android:label="{title}"
+		tools:layout="@layout/fragment_grammar_rule_detail_edit" >
+		<argument
+			android:name="grammarRuleId"
+			app:argType="string"
+			app:nullable="true" />
+		<argument
+			android:name="title"
+			app:argType="string" />
+	</fragment>
+	<navigation
+		android:id="@+id/nav_graph_settings"
+		app:startDestination="@id/settingsMainFragment" >
+		<fragment
+			android:id="@+id/settingsMainFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsMainFragment"
+			android:label="@string/general_settings"
+			tools:layout="@layout/fragment_settings_main" >
+			<action
+				android:id="@+id/settingsMain_to_settingsWordQuiz"
+				app:destination="@id/settingsWordQuizFragment" />
+			<action
+				android:id="@+id/settingsMain_to_settingsUi"
+				app:destination="@id/settingsUserInterfaceFragment" />
+			<action
+				android:id="@+id/settingsMain_to_settingsBackup"
+				app:destination="@id/nav_graph_settings_backup" />
+			<action
+				android:id="@+id/settingsMain_to_settingsAbout"
+				app:destination="@id/nav_graph_settings_about" />
+			<action
+				android:id="@+id/settingsMain_to_settingsAuthUser"
+				app:destination="@id/nav_graph_settings_auth" />
+		</fragment>
+		<fragment
+			android:id="@+id/settingsWordQuizFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsWordQuizFragment"
+			android:label="@string/settings_word_quiz"
+			tools:layout="@layout/fragment_settings_word_quiz" />
+		<fragment
+			android:id="@+id/settingsUserInterfaceFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsUserInterfaceFragment"
+			android:label="@string/settings_ui" />
+		<navigation
+			android:id="@+id/nav_graph_settings_backup"
+			app:startDestination="@id/settingsBackupFragment" >
+			<fragment
+				android:id="@+id/settingsBackupFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.backup.SettingsBackupFragment"
+				android:label="@string/settings_backup">
+				<action
+					android:id="@+id/settingsBackup_to_settingsBackupList"
+					app:destination="@id/settingsLocalBackupListFragment" />
+			</fragment>
+			<fragment
+				android:id="@+id/settingsLocalBackupListFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.backup.SettingsLocalBackupListFragment"
+				android:label="@string/settings_local_backups" />
+		</navigation>
+		<navigation
+			android:id="@+id/nav_graph_settings_about"
+			app:startDestination="@id/settingsAboutFragment" >
+			<fragment
+				android:id="@+id/settingsAboutFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.about.SettingsAboutFragment"
+				android:label="@string/general_about_app">
+				<action
+					android:id="@+id/settingsAbout_to_settingsAppSummary"
+					app:destination="@id/settingsAppSummaryFragment" />
+				<action
+					android:id="@+id/settingsAbout_to_settingsThirdPartyLibs"
+					app:destination="@id/settingsThirdPartyLibraryListFragment" />
+			</fragment>
+			<fragment
+				android:id="@+id/settingsAppSummaryFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.about.SettingsAppSummaryFragment"
+				android:label="@string/settings_app_summary"
+				tools:layout="@layout/fragment_settings_app_summary" />
+			<fragment
+				android:id="@+id/settingsThirdPartyLibraryListFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.about.SettingsThirdPartyLibraryListFragment"
+				android:label="@string/settings_third_party_libraries" />
+		</navigation>
+		<navigation
+			android:id="@+id/nav_graph_settings_auth"
+			app:startDestination="@id/settingsAuthUserFragment" >
+			<fragment
+				android:id="@+id/settingsAuthUserFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.auth.SettingsAuthUserFragment"
+				android:label="@string/auth_account" >
+				<action
+					android:id="@+id/settingsAuthUser_to_settingsAuthChangePassword"
+					app:destination="@id/settingsAuthChangePasswordFragment" />
+				<action
+					android:id="@+id/settingsAuthUser_to_settingsAuthDeleteAccount"
+					app:destination="@id/settingsAuthDeleteAccountFragment" />
+			</fragment>
+			<fragment
+				android:id="@+id/settingsAuthChangePasswordFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.auth.SettingsAuthChangePasswordFragment"
+				android:label="@string/settings_auth_change_password" />
+			<fragment
+				android:id="@+id/settingsAuthDeleteAccountFragment"
+				android:name="jp.mihailskuzmins.sugoinihongoapp.features.settings.auth.SettingsAuthDeleteAccountFragment"
+				android:label="@string/settings_auth_delete_account" />
+		</navigation>
+	</navigation>
+	<action
+		android:id="@+id/any_to_settingsMain"
+		app:destination="@id/nav_graph_settings" />
+	<navigation
+		android:id="@+id/nav_graph_word_quiz"
+		app:startDestination="@id/wordStudySelectTypeFragment" >
+		<fragment
+			android:id="@+id/wordStudySelectTypeFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudySelectTypeFragment"
+			android:label="@string/word_quiz_select_type"
+			tools:layout="@layout/fragment_word_study_select_type" >
+			<action
+				android:id="@+id/wordQuizSelectType_to_wordQuizListOfWords"
+				app:destination="@id/wordStudyListOfWordsListFragment" />
+			<action
+				android:id="@+id/wordQuizSelectType_to_wordQuizFindRecogniseWord"
+				app:destination="@id/wordQuizFindRecogniseWordFragment" />
+			<action
+				android:id="@+id/wordStudySelectType_to_wordStudyHistoryFindRecognise"
+				app:destination="@id/wordStudyHistoryFindRecogniseListFragment" />
+		</fragment>
+		<fragment
+			android:id="@+id/wordStudyListOfWordsListFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyListOfWordsListFragment"
+			android:label="@string/word_quiz_list_of_words" />
+		<fragment
+			android:id="@+id/wordQuizFindRecogniseWordFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyFindRecogniseFragment"
+			android:label="@string/general_multiple_choice_quiz"
+			tools:layout="@layout/fragment_word_study_find_recognise" >
+			<argument
+				android:name="quizType"
+				app:argType="jp.mihailskuzmins.sugoinihongoapp.models.wordStudy.WordQuizType"/>
+			<action
+				android:id="@+id/wordQuizFindRecogniseWord_to_wordQuizResultFindRecogniseWord"
+				app:destination="@id/wordStudyResultFindRecogniseListFragment" />
+		</fragment>
+		<fragment
+			android:id="@+id/wordStudyResultFindRecogniseListFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyResultFindRecogniseListFragment"
+			android:label="@string/word_quiz_results" >
+			<argument
+				android:name="wordQuizId"
+				app:argType="long" />
+		</fragment>
+		<fragment
+			android:id="@+id/wordStudyHistoryFindRecogniseListFragment"
+			android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyHistoryFindRecogniseListFragment"
+			android:label="@string/word_study_history" >
+			<action
+				android:id="@+id/wordStudyHistoryFindRecognise_to_wordStudyResultFindRecognise"
+				app:destination="@id/wordStudyResultFindRecogniseListFragment" />
+		</fragment>
+	</navigation>
+	<fragment
+		android:id="@+id/wordSearchListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.WordSearchListFragment"
+		android:label=" " >
+		<action
+			android:id="@+id/wordSearchList_to_wordDetailRead"
+			app:destination="@id/wordDetailReadFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/sentenceSearchListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.sentence.SentenceSearchListFragment"
+		android:label=" " >
+		<action
+			android:id="@+id/sentenceSearchList_to_sentenceDetailRead"
+			app:destination="@id/sentenceDetailReadFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/grammarRuleSearchListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleSearchListFragment"
+		android:label=" " >
+		<action
+			android:id="@+id/grammarRuleSearchList_to_grammarRuleDetailRead"
+			app:destination="@id/grammarRuleDetailReadFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/wordFavouritesListFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.word.favourites.WordFavouritesListFragment"
+		android:label="@string/word_favourites"
+		tools:layout="@layout/fragment_word_favourites_list" >
+		<action
+			android:id="@+id/wordListFavourites_to_wordDetailRead"
+			app:destination="@id/wordDetailReadFragment" />
+	</fragment>
+</navigation>

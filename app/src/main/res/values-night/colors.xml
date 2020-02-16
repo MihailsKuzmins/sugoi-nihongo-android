@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorAppBackground">#262626</color>
+	<color name="colorDetailTextLabel">#f5f5f5</color>
+	<color name="colorMarkExcellent">#33af0a</color>
+	<color name="colorMarkGood">#abaf15</color>
+	<color name="colorMarkAverage">#c36b0b</color>
+	<color name="colorMarkBad">#a70909</color>
+	<color name="colorMarkExcluded">#a09c9c</color>
+	<color name="colorToolbarItem">#c1c1c1</color>
+	<color name="colorToolbarItemReverse">@android:color/black</color>
+	<color name="colorWindowBackground">#303030</color>
+	<color name="colorSearchTextPlaceholder">#60f5f5f5</color>
+	<color name="colorTextDim">#80c1c1c1</color>
+</resources>

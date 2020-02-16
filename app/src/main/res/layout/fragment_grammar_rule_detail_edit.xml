@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleDetailEditViewModel"/>
+	</data>
+
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.grammarrule.GrammarRuleDetailEditFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<!-- Original -->
+			<include
+				layout="@layout/detail_item_edit_text"
+				app:detailItem="@{viewModel.headerItem}"/>
+
+			<!-- Translation -->
+			<include
+				layout="@layout/detail_item_edit_text_fill"
+				app:detailItem="@{viewModel.bodyItem}"/>
+		</LinearLayout>
+
+		<include
+			android:id="@+id/fragment_grammar_rule_detail_edit_fab"
+			layout="@layout/control_floating_action_button"
+			app:srcFab="@{@drawable/ic_save_white_24dp}"
+			app:isEnabled="@{viewModel.isValid}"/>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

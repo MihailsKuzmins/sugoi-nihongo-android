@@ -1,0 +1,18 @@
+<resources>
+	<dimen name="list_item_padding">7dp</dimen>
+	<dimen name="spacing_horizontal">10dp</dimen>
+	<dimen name="spacing_vertical">5dp</dimen>
+	<dimen name="spacing_vertical_double">10dp</dimen>
+	<dimen name="font_size_header">22sp</dimen>
+	<dimen name="font_size_text">20sp</dimen>
+	<dimen name="font_size_text_small">17sp</dimen>
+	<dimen name="detail_item_height">75dp</dimen>
+	<dimen name="control_separator_weight">0.5dp</dimen>
+	<dimen name="table_word_mark_first_column_width">100dp</dimen>
+	<dimen name="dialog_item_spacing">20dp</dimen>
+	<dimen name="image_bounds">32dp</dimen>
+	<dimen name="no_result_text_view_top_margin">32dp</dimen>
+	<dimen name="fab_content_bottom_padding">72dp</dimen>
+	<dimen name="progress_bar_height">5dp</dimen>
+	<dimen name="color_state_width">10dp</dimen>
+</resources>

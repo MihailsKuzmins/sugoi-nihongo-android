@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="AppTheme" parent="AppTheme.V23">
+		<item name="android:windowLightStatusBar">false</item>
+	</style>
+
+	<style name="AppTheme.SignInSignUp" parent="AppTheme.SignInSignUp.V23">
+		<item name="android:windowLightStatusBar">false</item>
+	</style>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsWordQuizViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.SettingsWordQuizFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<!-- Is transcription shown -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isTranscriptionShownItem}"/>
+
+			<!-- Is result shown on exit -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isResultShowOnExitItem}"/>
+
+			<!-- Quiz value count -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.questionCountItem}"/>
+
+			<!-- Min options count -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.minOptionCountItem}"/>
+
+			<!-- Max options count -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.maxOptionCountItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.markSectionHeader}"/>
+
+			<!-- Is mark decrement enabled -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isMarkDecrementEnabledItem}"/>
+
+			<!-- Decrement mark days -->
+			<include
+				layout="@layout/detail_item_seek_bar"
+				app:detailItem="@{viewModel.decrementMarkDaysItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+		</LinearLayout>
+	</ScrollView>
+</layout>

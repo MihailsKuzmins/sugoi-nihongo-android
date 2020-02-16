@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="listItem" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.listitems.WordQuizQuestionResultListItem"/>
+	</data>
+
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingStart="@dimen/spacing_horizontal"
+		android:paddingEnd="@dimen/spacing_horizontal"
+		android:paddingTop="@dimen/spacing_vertical"
+		android:paddingBottom="@dimen/spacing_vertical">
+
+		<ImageView
+			android:id="@+id/list_item_word_quiz_question_result_image_view"
+			android:layout_width="@dimen/image_bounds"
+			android:layout_height="@dimen/image_bounds"
+			android:layout_centerVertical="true"
+			android:adjustViewBounds="true"
+			app:imageResource="@{listItem.image}"
+			android:contentDescription="@string/word_quiz_results"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_toEndOf="@id/list_item_word_quiz_question_result_image_view"
+			android:layout_gravity="center_vertical"
+			android:textSize="@dimen/font_size_text"
+			android:text="@{listItem.text}"/>
+	</RelativeLayout>
+
+</layout>

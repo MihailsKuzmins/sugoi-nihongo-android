@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsUserInterfaceViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.SettingsUserInterfaceFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<!-- Show entry id -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isEntryIdShownItem}"/>
+
+			<!-- Show word mark table -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isWordMarkTableShownItem}"/>
+
+			<!-- Is dark mode -->
+			<include
+				layout="@layout/detail_item_switch"
+				app:detailItem="@{viewModel.isDarkModeItem}"/>
+		</LinearLayout>
+	</ScrollView>
+
+</layout>

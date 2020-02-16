@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="listItem" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.listitems.SettingsThirdPartyLibraryListItem"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_marginStart="@dimen/spacing_horizontal"
+		android:layout_marginEnd="@dimen/spacing_horizontal"
+		android:layout_marginBottom="@dimen/spacing_vertical"
+		android:layout_marginTop="@dimen/spacing_vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:textSize="@dimen/font_size_header"
+			android:textStyle="bold"
+			android:textColor="@color/colorPrimaryDark"
+			android:text="@{listItem.name}"
+			app:browseUrl="@{listItem.projectUrl}"
+			app:isClickable="@{true}" />
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:text="@{listItem.copyright}"/>
+
+		<ViewStub
+			android:id="@+id/list_item_settings_third_party_library_view_stub"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+</layout>

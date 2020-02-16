@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="listItem" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.listitems.WordListItem"/>
+		<variable name="viewHolder" type="jp.mihailskuzmins.sugoinihongoapp.features.word.WordSearchListAdapter.ViewHolder"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:onClick="@{() -> viewHolder.clickAction(listItem.id)}"
+		app:isClickable="@{true}">
+
+		<View
+			android:layout_width="@dimen/color_state_width"
+			android:layout_height="match_parent"
+			android:background="@{listItem.markStateColor}"/>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginTop="@dimen/spacing_vertical"
+			android:layout_marginBottom="@dimen/spacing_vertical"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:gravity="center_vertical"
+			android:textSize="@dimen/font_size_header"
+			android:text="@{listItem.translation}"/>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginTop="@dimen/spacing_vertical"
+			android:layout_marginBottom="@dimen/spacing_vertical"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:gravity="center_vertical"
+			android:textSize="@dimen/font_size_header"
+			android:text="@{listItem.original}"/>
+	</LinearLayout>
+
+</layout>

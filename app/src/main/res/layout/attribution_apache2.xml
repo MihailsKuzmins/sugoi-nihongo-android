@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<import type="jp.mihailskuzmins.sugoinihongoapp.resources.AppConstants"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:text="@string/licence_attribution_apache2_paragraph1"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:textColor="@color/colorPrimaryDark"
+			app:underlinedText="@{AppConstants.Urls.apache2AttributionUrl}"
+			app:browseUrl="@{AppConstants.Urls.apache2AttributionUrl}"
+			app:isClickable="@{true}"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/licence_attribution_apache2_paragraph2"/>
+	</LinearLayout>
+	
+</layout>

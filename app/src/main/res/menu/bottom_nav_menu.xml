@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/wordListFragment"
+		android:icon="@drawable/ic_bookmark_24dp"
+		android:title="@string/general_words"/>
+
+	<item
+		android:id="@+id/sentenceListFragment"
+		android:icon="@drawable/ic_description_24dp"
+		android:title="@string/general_sentences"/>
+
+	<item
+		android:id="@+id/grammarRuleListFragment"
+		android:icon="@drawable/ic_library_books_black_24dp"
+		android:title="@string/general_grammar_rules"/>
+
+</menu>

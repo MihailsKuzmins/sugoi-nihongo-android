@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="sectionHeader" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.views.SectionHeader"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="7.5dp"
+			android:layout_marginBottom="7.5dp"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:textStyle="bold"
+			android:textSize="@dimen/font_size_text"
+			android:text="@{sectionHeader.label}"/>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="2dp"
+			android:background="@color/colorDetailSeparator"/>
+
+	</LinearLayout>
+</layout>

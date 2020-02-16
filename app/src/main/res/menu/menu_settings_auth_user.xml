@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id="@+id/menu_settings_auth_user_delete_account"
+		android:orderInCategory="0"
+		android:title="@string/settings_auth_delete_account"
+		app:showAsAction="never"/>
+
+</menu>

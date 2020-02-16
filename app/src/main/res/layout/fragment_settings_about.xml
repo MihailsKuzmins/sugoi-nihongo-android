@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.about.SettingsAboutViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.about.SettingsAboutFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<!-- App name -->
+			<include
+				layout="@layout/detail_item_text_view"
+				app:detailItem="@{viewModel.appNameItem}"/>
+
+			<!-- App version -->
+			<include
+				layout="@layout/detail_item_text_view"
+				app:detailItem="@{viewModel.appVersionItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.resourcesSection}"/>
+
+			<!-- App website -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.appWebsiteItem}"/>
+
+			<!-- Development credits -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.devCreditsItem}"/>
+
+			<!-- App summary -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.appSummaryItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+		</LinearLayout>
+	</ScrollView>
+
+</layout>

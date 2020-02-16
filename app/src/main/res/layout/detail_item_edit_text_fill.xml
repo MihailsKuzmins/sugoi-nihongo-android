@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="detailItem" type="jp.mihailskuzmins.sugoinihongoapp.features.base.detail.detailitems.DetailItemEditText"/>
+	</data>
+
+	<com.google.android.material.textfield.TextInputLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingTop="@dimen/spacing_vertical"
+		android:paddingStart="@dimen/spacing_horizontal"
+		android:paddingEnd="@dimen/spacing_horizontal"
+		android:hint="@{detailItem.label}"
+		android:labelFor="@id/detail_item_edit_text_fill_text_input_edit_text"
+		app:errorText="@{detailItem.validationMessage}"
+		app:counterMaxLength="@{detailItem.maxLength}">
+
+		<!-- layout_weight makes validation and max length visible. If not set they are beyond the screen -->
+		<jp.mihailskuzmins.sugoinihongoapp.userinterface.controls.CustomTextInputEditText
+			android:id="@+id/detail_item_edit_text_fill_text_input_edit_text"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:importantForAutofill="no"
+			android:gravity="top|start"
+			android:inputType="textMultiLine|textCapSentences"
+			android:scrollbars="vertical"
+			android:textSize="@dimen/font_size_text"
+			android:text="@={detailItem.value}"
+			android:enabled="@{detailItem.enabled}"
+			app:selectionAndFocusHandler="@{detailItem}"/>
+	</com.google.android.material.textfield.TextInputLayout>
+
+</layout>

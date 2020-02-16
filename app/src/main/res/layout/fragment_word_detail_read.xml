@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.word.WordDetailReadViewModel"/>
+	</data>
+
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.word.WordDetailReadFragment">
+
+		<ScrollView
+			style="@style/AppTheme.FabContent"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<!-- Word Id -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.wordIdItem}"/>
+
+				<!-- Original -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.originalItem}"/>
+
+				<!-- Translation -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.translationItem}"
+					app:isSeparatorVisible="@{viewModel.transcriptionItem.visible}"/>
+
+				<!-- Transcription -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.transcriptionItem}"
+					app:isSeparatorVisible="@{viewModel.notesItem.visible}"/>
+
+				<!-- Notes -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.notesItem}"
+					app:isSeparatorVisible="@{false}"/>
+
+				<include
+					layout="@layout/control_section_header"
+					app:sectionHeader="@{viewModel.wordPropsSectionHeader}"/>
+
+				<!-- Is Studiable -->
+				<include
+					layout="@layout/detail_item_switch"
+					app:detailItem="@{viewModel.isStudiableItem}"/>
+
+				<!-- Mark -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.markItem}"/>
+
+				<!-- Last Accessed -->
+				<include
+					layout="@layout/detail_item_text_view"
+					app:detailItem="@{viewModel.lastAccessedItem}"
+					app:isSeparatorVisible="@{viewModel.accuracyItem.visible}"/>
+
+				<!-- Accuracy -->
+				<include
+					layout="@layout/detail_item_pie_chart"
+					app:detailItem="@{viewModel.accuracyItem}"/>
+
+			</LinearLayout>
+		</ScrollView>
+
+		<include
+			android:id="@+id/fragment_word_detail_read_fab"
+			layout="@layout/control_floating_action_button"
+			app:srcFab="@{@drawable/ic_edit_white_24dp}"/>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

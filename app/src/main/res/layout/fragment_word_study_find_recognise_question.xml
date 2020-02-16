@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyFindRecogniseViewModel"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<!-- Labels -->
+		<TableLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:layout_marginTop="@dimen/spacing_vertical"
+			android:layout_marginBottom="@dimen/spacing_vertical"
+			android:stretchColumns="0"
+			android:shrinkColumns="1">
+
+			<!-- Score and index -->
+			<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<include
+					layout="@layout/control_text_view_with_colon"
+					app:label="@{@string/general_score}"
+					app:text="@{String.valueOf(viewModel.score)}"/>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@{String.valueOf(viewModel.questionIndex)}"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@{`/` + viewModel.questionCount}"/>
+				</LinearLayout>
+			</TableRow>
+
+			<!-- Mistakes -->
+			<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<include
+					layout="@layout/control_text_view_with_colon"
+					app:label="@{@string/general_mistakes}"
+					app:text="@{String.valueOf(viewModel.mistakeCount)}"/>
+
+			</TableRow>
+
+		</TableLayout>
+
+		<!-- Question -->
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:textSize="30sp"
+				android:text="@{viewModel.questionText}"/>
+		</ScrollView>
+	</LinearLayout>
+
+</layout>

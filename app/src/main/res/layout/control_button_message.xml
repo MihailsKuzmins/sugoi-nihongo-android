@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="buttonMessage" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.views.ButtonMessage"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@{buttonMessage.label}"
+			android:enabled="@{buttonMessage.enabled}"
+			android:onClick="@{() -> buttonMessage.action.invoke()}"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:textColor="@color/colorError"
+			android:layout_gravity="center"
+			android:text="@{buttonMessage.message}"
+			android:visibility="@{buttonMessage.isMessageVisible}"/>
+	</LinearLayout>
+
+</layout>

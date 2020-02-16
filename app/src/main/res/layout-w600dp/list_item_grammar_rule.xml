@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="listItem" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.listitems.GrammarRuleListItem"/>
+		<variable name="viewHolder" type="jp.mihailskuzmins.sugoinihongoapp.features.grammarrule.GrammarRuleListAdapter.ViewHolder"/>
+	</data>
+
+	<GridLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:rowCount="2"
+		android:columnCount="2"
+		android:padding="@dimen/list_item_padding"
+		android:textSize="@dimen/font_size_header"
+		android:onClick="@{() -> viewHolder.clickAction(listItem.id)}"
+		app:isClickable="@{true}">
+
+		<!-- Header -->
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_row="0"
+			android:layout_column="0"
+			android:layout_columnWeight="1"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:textColor="@color/colorTextDim"
+			android:text="@string/grammar_rule_header"/>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_row="1"
+			android:layout_column="0"
+			android:layout_columnWeight="1"
+			android:textSize="@dimen/font_size_header"
+			android:layout_marginEnd="@dimen/spacing_horizontal"
+			android:text="@{listItem.header}"/>
+
+		<!-- Body -->
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_row="0"
+			android:layout_column="1"
+			android:layout_columnWeight="1"
+			android:textColor="@color/colorTextDim"
+			android:text="@string/grammar_rule_body"/>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_row="1"
+			android:layout_column="1"
+			android:layout_columnWeight="1"
+			android:textSize="@dimen/font_size_header"
+			android:text="@{listItem.body}"/>
+	</GridLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="model" type="jp.mihailskuzmins.sugoinihongoapp.models.wordStudy.WordStudyModel" />
+		<variable name="viewHolder" type="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyListOfWordsListAdapter.ViewHolder"/>
+	</data>
+
+	<TextView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingStart="@dimen/spacing_horizontal"
+		android:paddingEnd="@dimen/spacing_horizontal"
+		android:paddingTop="@dimen/spacing_vertical"
+		android:paddingBottom="@dimen/spacing_vertical"
+		android:textSize="25sp"
+		android:text="@{model.original}"
+		app:isClickable="@{true}"
+		android:onClick="@{() -> viewHolder.clickAction(model)}"/>
+
+</layout>

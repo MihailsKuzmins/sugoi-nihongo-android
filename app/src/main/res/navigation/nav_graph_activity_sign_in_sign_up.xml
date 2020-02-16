@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_graph_activity_sign_in_sign_up"
+	app:startDestination="@id/authSignInFragment">
+
+	<fragment
+		android:id="@+id/authSignInFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.auth.AuthSignInFragment"
+		tools:layout="@layout/fragment_auth_sign_in">
+		<action
+			android:id="@+id/authSignIn_to_authLoggedUser"
+			app:destination="@id/authLoggedUserFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/authSignUpFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.auth.AuthSignUpFragment"
+		tools:layout="@layout/fragment_auth_sign_up">
+		<action
+			android:id="@+id/authSignUp_to_authLoggedUser"
+			app:destination="@id/authLoggedUserFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/authLoggedUserFragment"
+		android:name="jp.mihailskuzmins.sugoinihongoapp.features.auth.AuthLoggedUserFragment"
+		android:label="AuthLoggedUserFragment" >
+		<argument
+			android:name="errorMessageCode"
+			app:argType="integer"
+			android:defaultValue="-1" />
+	</fragment>
+</navigation>

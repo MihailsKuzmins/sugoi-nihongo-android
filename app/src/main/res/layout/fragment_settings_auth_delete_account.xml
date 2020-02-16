@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.auth.SettingsAuthDeleteAccountViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.auth.SettingsAuthDeleteAccountFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:layout_marginEnd="@dimen/spacing_horizontal">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textColor="@color/colorError"
+				android:text="@string/settings_auth_delete_account_credentials_request"
+				android:layout_marginBottom="25dp"/>
+
+			<!-- Email -->
+			<include
+				layout="@layout/detail_item_edit_text"
+				app:detailItem="@{viewModel.emailItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<!-- Password -->
+			<include
+				layout="@layout/detail_item_edit_text_password"
+				app:detailItem="@{viewModel.passwordItem}"/>
+
+			<include
+				layout="@layout/control_button_message"
+				app:buttonMessage="@{viewModel.authButton}"/>
+		</LinearLayout>
+	</ScrollView>
+
+</layout>

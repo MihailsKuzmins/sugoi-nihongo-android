@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.word.WordListFragment">
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/fragment_word_list_recycler_view"
+			style="@style/AppTheme.FabContent"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+		<include
+			android:id="@+id/fragment_word_list_no_results_text_view"
+			layout="@layout/control_text_view_no_results"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"/>
+
+		<include
+			android:id="@+id/fragment_word_list_fab"
+			layout="@layout/control_floating_action_button"/>
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

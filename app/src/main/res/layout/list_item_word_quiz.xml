@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="listItem" type="jp.mihailskuzmins.sugoinihongoapp.userinterface.listitems.WordQuizListItem"/>
+		<variable name="viewHolder" type="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyHistoryFindRecogniseListAdapter.ViewHolder"/>
+	</data>
+
+	<GridLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:rowCount="2"
+		android:columnCount="2"
+		android:padding="@dimen/list_item_padding"
+		android:textSize="@dimen/font_size_header"
+		android:onClick="@{() -> viewHolder.clickAction(listItem.id)}"
+		app:isClickable="@{true}">
+
+		<TextView
+			android:layout_row="0"
+			android:layout_rowSpan="2"
+			android:layout_column="0"
+			android:layout_columnWeight="1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:text="@{listItem.time}"/>
+
+		<TextView
+			android:layout_row="0"
+			android:layout_column="1"
+			android:layout_columnWeight="1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="@{listItem.quizType}"/>
+
+		<TextView
+			android:layout_row="1"
+			android:layout_column="1"
+			android:layout_columnWeight="2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="@{@string/general_score + `: ` + listItem.score + `, ` + @string/general_mistakes + `: ` + listItem.mistakeCount}"/>
+	</GridLayout>
+
+</layout>

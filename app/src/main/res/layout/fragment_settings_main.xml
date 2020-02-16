@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.settings.SettingsMainViewModel"/>
+	</data>
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.settings.SettingsMainFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.studySectionHeader}"/>
+
+			<!-- Word quiz -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.wordQuizItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.technicalSectionHeader}"/>
+
+			<!-- User interface -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.uiItem}"/>
+
+			<!-- Backup -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.backupItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+			<include
+				layout="@layout/control_section_header"
+				app:sectionHeader="@{viewModel.appSectionHeader}"/>
+
+			<!-- Account -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.accountItem}"/>
+
+			<!-- About -->
+			<include
+				layout="@layout/detail_item_text_view_image"
+				app:detailItem="@{viewModel.aboutItem}"
+				app:isSeparatorVisible="@{false}"/>
+
+		</LinearLayout>
+	</ScrollView>
+</layout>

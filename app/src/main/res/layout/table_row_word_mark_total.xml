@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="markCount" type="Integer"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="@dimen/table_word_mark_first_column_width"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:textStyle="bold"
+			android:textSize="@dimen/font_size_text_small"
+			android:text="@string/general_total"/>
+
+		<include layout="@layout/control_separator_vertical"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/spacing_horizontal"
+			android:textSize="@dimen/font_size_text_small"
+			android:text="@{String.valueOf(markCount)}"/>
+	</LinearLayout>
+
+</layout>

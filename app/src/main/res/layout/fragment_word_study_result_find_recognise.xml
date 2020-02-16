@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<data>
+		<variable name="viewModel" type="jp.mihailskuzmins.sugoinihongoapp.features.word.study.WordStudyResultFindRecogniseListViewModel"/>
+	</data>
+
+	<androidx.core.widget.NestedScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".features.word.study.WordStudyResultFindRecogniseListFragment">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<include
+				layout="@layout/control_text_view_with_colon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="@dimen/spacing_vertical"
+				app:label="@{@string/general_score}"
+				app:text="@{String.valueOf(viewModel.score)}"
+				app:textSize="@{20F}"/>
+
+			<include
+				layout="@layout/control_text_view_with_colon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginBottom="@dimen/spacing_vertical"
+				app:label="@{@string/general_mistakes}"
+				app:text="@{String.valueOf(viewModel.mistakeCount)}"
+				app:textSize="@{20F}"/>
+
+			<include layout="@layout/control_separator_horizontal"/>
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/fragment_word_study_result_find_recognise_word_recycler_view"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
+		</LinearLayout>
+	</androidx.core.widget.NestedScrollView>
+
+</layout>

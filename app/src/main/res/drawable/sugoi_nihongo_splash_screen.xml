@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:opacity="opaque">
+
+	<item android:drawable="@color/colorAppBackground"/>
+
+	<item
+		android:gravity="center_horizontal|bottom"
+		android:bottom="50dp"
+		android:drawable="@drawable/sugoi_nihongo_splash_screen_text"/>
+</layer-list>
